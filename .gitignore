@@ -1,0 +1,15 @@
+# Local development
+/tmp/
+*.log
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Verification scripts
+verify_app.py
+verify_app_fixed.py
