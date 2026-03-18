@@ -458,7 +458,15 @@ const Player = (() => {
     els.videoWrapper.addEventListener('mouseenter', resetHideControlsTimer);
     els.videoWrapper.addEventListener('mouseleave', () => {
       clearTimeout(hideControlsTimer);
+      if (!video.paused) {
+        els.controlsOverlay.style.opacity = '0';
+        els.controlsOverlay.style.pointerEvents = 'none';
+        els.videoWrapper.style.cursor = 'none';
+      }
     });
+
+    // Support touch devices to wake up controls
+    els.videoWrapper.addEventListener('touchstart', resetHideControlsTimer, { passive: true });
 
     // Double-click to fullscreen
     video.addEventListener('dblclick', toggleFullscreen);
@@ -613,10 +621,13 @@ const Player = (() => {
     clearTimeout(hideControlsTimer);
     els.controlsOverlay.style.opacity = '1';
     els.controlsOverlay.style.pointerEvents = 'all';
+    els.videoWrapper.style.cursor = 'default';
+
     hideControlsTimer = setTimeout(() => {
       if (!video.paused) {
         els.controlsOverlay.style.opacity = '0';
         els.controlsOverlay.style.pointerEvents = 'none';
+        els.videoWrapper.style.cursor = 'none';
       }
     }, 3000);
   }
