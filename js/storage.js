@@ -93,7 +93,7 @@ const Storage = (() => {
     quality:         'auto',
     showNumbers:     false,
     viewMode:        'list', // 'list' | 'grid'
-    proxyBaseUrl:    '',     // Optional production proxy URL (e.g. Render.com)
+    proxyBaseUrl:    'https://akxel001-iptv-proxy.hf.space',     // Default production proxy URL
   };
 
   function getSettings() {

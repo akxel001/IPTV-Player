@@ -1,3 +1,12 @@
+---
+title: IPTV Proxy
+emoji: 📺
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # StreamVault - Professional IPTV Player
 
 A full-featured, browser-based IPTV Player supporting live streams, M3U playlists, and local video files.  

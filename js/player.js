@@ -680,10 +680,10 @@ const Player = (() => {
     if (url.includes('/proxy?url=')) return url;
 
     const settings = Storage.getSettings();
-    const base = settings.proxyBaseUrl || '';
+    const base = settings.proxyBaseUrl || 'https://akxel001-iptv-proxy.hf.space';
     
     // If we are on a remote site (like GitHub Pages) and no proxy base is set,
-    // we default to root /proxy which might fail if not hosted on same domain.
+    // we default to the Hugging Face proxy.
     const proxyBase = base.endsWith('/') ? base.slice(0, -1) : base;
     return `${proxyBase}/proxy?url=${encodeURIComponent(url)}`;
   }
